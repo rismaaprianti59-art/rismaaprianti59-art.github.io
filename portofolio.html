@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio — [Nama Kamu]</title>
+  <meta name="description" content="Portofolio pribadi - proyek, keterampilan, kontak." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071029 0%, var(--bg) 100%);color:#e6eef6;line-height:1.5}
+    .container{max-width:1000px;margin:36px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021025}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:28px;align-items:center}
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0 0 8px 0;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+    .profile{display:flex;gap:16px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:12px;flex-shrink:0;background:linear-gradient(180deg,#e6eef610, transparent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021025}
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{background:var(--glass);padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:700}
+
+    /* Projects grid */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+    .proj{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .proj h3{margin:0 0 6px 0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    /* Skills */
+    .skills{margin-top:10px}
+    .skill{margin-bottom:10px}
+    .bar{height:10px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);width:60%}
+
+    /* Contact */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:8px;color:inherit}
+    button{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#021025;font-weight:700;cursor:pointer}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr} .projects{grid-template-columns:1fr} .avatar{width:80px;height:80px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">R</div>
+        <div>
+          <div style="font-weight:800">[Nama Kamu]</div>
+          <div style="font-size:12px;color:var(--muted)">Web Developer • Desainer UI • Pelajar</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <div class="profile">
+          <div class="avatar">RA</div>
+          <div>
+            <h1>Halo, saya [Nama Kamu]</h1>
+            <p class="lead">Saya membuat aplikasi web, antarmuka pengguna, dan desain sederhana yang fokus pada pengalaman pengguna. Saya tertarik pada AI, frontend, dan automasi.</p>
+            <div class="stats" aria-hidden>
+              <div class="stat">3+ Proyek</div>
+              <div class="stat">2 Tahun Pengalaman</div>
+              <div class="stat">SMK — Jurusan AI</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="about" style="margin-top:14px">
+          <h3>Tentang Saya</h3>
+          <p class="lead">Saya pelajar yang suka membuat proyek nyata: website, aplikasi sederhana, dan ikut organisasi. Saya ingin terus belajar supaya bisa membuat produk yang berguna.</p>
+        </div>
+
+        <div id="projects" class="projects">
+          <article class="proj">
+            <h3>Website Toko Online</h3>
+            <p class="lead">Aplikasi penjualan barang sederhana dengan keranjang, admin panel, dan laporan.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          </article>
+
+          <article class="proj">
+            <h3>Portal Sekolah</h3>
+            <p class="lead">Sistem informasi siswa: data, absensi, dan ekstrakurikuler.</p>
+            <div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span></div>
+          </article>
+
+          <article class="proj">
+            <h3>Aplikasi Catatan</h3>
+            <p class="lead">Aplikasi catatan harian yang responsif dan bisa digunakan offline.</p>
+            <div class="tags"><span class="tag">PWA</span><span class="tag">Service Worker</span></div>
+          </article>
+
+          <article class="proj">
+            <h3>Desain UI - Aplikasi Kantin</h3>
+            <p class="lead">Prototype UI untuk memudahkan pemesanan makanan di sekolah.</p>
+            <div class="tags"><span class="tag">Figma</span><span class="tag">Prototype</span></div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Kontak Singkat</h3>
+        <p class="lead">Ingin bekerja sama? Kirim pesan singkat — saya biasanya cepat membalas.</p>
+        <div style="margin-top:10px;font-weight:700">Email</div>
+        <div style="color:var(--muted);margin-bottom:12px">nama@example.com</div>
+
+        <h3 id="skills">Keterampilan</h3>
+        <div class="skills">
+          <div class="skill"><div style="font-weight:700">HTML &amp; CSS</div><div class="bar" aria-hidden><i style="width:90%"></i></div></div>
+          <div class="skill"><div style="font-weight:700">JavaScript</div><div class="bar" aria-hidden><i style="width:70%"></i></div></div>
+          <div class="skill"><div style="font-weight:700">Laravel / PHP</div><div class="bar" aria-hidden><i style="width:60%"></i></div></div>
+          <div class="skill"><div style="font-weight:700">UI / Prototyping</div><div class="bar" aria-hidden><i style="width:75%"></i></div></div>
+        </div>
+
+        <h3 style="margin-top:14px">Unduh CV</h3>
+        <a href="#" style="display:inline-block;margin-top:8px;text-decoration:none"><button>Download CV (PDF)</button></a>
+      </aside>
+    </section>
+
+    <section class="card" style="margin-top:18px" id="contact">
+      <h2>Hubungi Saya</h2>
+      <form onsubmit="handleSubmit(event)">
+        <input type="text" id="name" placeholder="Nama" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <textarea id="message" rows="4" placeholder="Pesan" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+      <p id="note" style="color:var(--muted);margin-top:8px;font-size:13px">Atau kirim langsung ke <strong>nama@example.com</strong></p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> [Nama Kamu] — Dibuat dengan ❤️ • Template sederhana
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('message').value;
+      // membuka mail client sebagai cara sederhana mengirim pesan
+      const subject = encodeURIComponent('Pesan dari ' + name);
+      const body = encodeURIComponent('Nama: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+      window.location.href = `mailto:nama@example.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
