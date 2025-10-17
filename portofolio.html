@@ -3,131 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Magang — Risma Aprianti</title>
+  <title>Portofolio PKL - Marsya Ardeliansyah</title>
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
-    body {background: #0f172a; color: #f1f5f9; line-height: 1.6;}
-    header {background: #1e293b; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;}
-    header h1 {color: #38bdf8; font-size: 24px;}
-    nav a {color: #cbd5e1; margin-left: 20px; text-decoration: none; font-weight: 500;}
-    nav a:hover {color: #38bdf8;}
+    /* ==== RESET ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-    section {padding: 60px 40px; max-width: 1000px; margin: auto;}
-    h2 {color: #38bdf8; margin-bottom: 15px; border-left: 4px solid #38bdf8; padding-left: 10px;}
-    .card {background: #1e293b; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); margin-bottom: 20px;}
+    body {
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
 
-    .profile {display: flex; align-items: center; gap: 20px;}
-    .profile img {width: 120px; height: 120px; border-radius: 50%; object-fit: cover;}
-    .profile div h3 {margin-bottom: 5px; font-size: 22px;}
-    .profile div p {color: #94a3b8;}
+    header {
+      background: linear-gradient(135deg, #5d5fef, #7a77ff);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-    .education, .experience, .organization, .portfolio {margin-top: 40px;}
-    ul {list-style: none;}
-    li {margin-bottom: 10px;}
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+    }
 
-    .portfolio-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;}
-    .project {background: #1e293b; border-radius: 10px; overflow: hidden; transition: transform 0.3s ease;}
-    .project:hover {transform: translateY(-6px);}
-    .project img {width: 100%; height: 180px; object-fit: cover;}
-    .project-content {padding: 15px;}
-    .project-content h4 {color: #38bdf8; margin-bottom: 5px;}
-    .project-content p {color: #cbd5e1; font-size: 14px;}
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
 
-    footer {background: #1e293b; text-align: center; padding: 20px; color: #94a3b8; margin-top: 40px;}
-    button {background: #38bdf8; border: none; padding: 10px 16px; border-radius: 8px; font-weight: 600; color: #0f172a; cursor: pointer;}
-    button:hover {background: #0ea5e9;}
+    nav {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #7a77ff;
+    }
+
+    section {
+      padding: 3rem 10%;
+    }
+
+    h2 {
+      color: #5d5fef;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #7a77ff;
+      display: inline-block;
+    }
+
+    .profile, .education, .organization, .portfolio {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #7a77ff;
+    }
+
+    .profile h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .education ul, .organization ul {
+      list-style: none;
+    }
+
+    .education li, .organization li {
+      margin-bottom: 0.8rem;
+    }
+
+    .portfolio-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin-bottom: 0.5rem;
+      color: #5d5fef;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #333;
+      color: white;
+    }
+
+    /* Responsif */
+    @media(max-width: 768px) {
+      section {
+        padding: 2rem 5%;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Risma Aprianti</h1>
-    <nav>
-      <a href="#profil">Profil</a>
-      <a href="#pendidikan">Pendidikan</a>
-      <a href="#pengalaman">Pengalaman</a>
-      <a href="#organisasi">Organisasi</a>
-      <a href="#portofolio">Portofolio</a>
-    </nav>
+    <h1>Portofolio PKL - Risma Aprianti</h1>
+    <p>Rekayasa Perangkat Lunak | SMK Informatika Utama</p>
   </header>
 
-  <section id="profil">
-    <h2>Profil Saya</h2>
-    <div class="card profile">
+  <nav>
+    <a href="#profil">Profil</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#organisasi">Pengalaman</a>
+    <a href="#portofolio">Portofolio</a>
+  </nav>
+
+  <section id="profil" class="profile">
+    <center>
       <img src="https://via.placeholder.com/120" alt="Foto Profil">
-      <div>
-        <h3>Risma Aprianti</h3>
-        <p>Pelajar SMK Jurusan Artificial Intelligence yang antusias dalam pengembangan web dan desain UI/UX. Saya memiliki semangat tinggi untuk belajar hal baru dan siap berkontribusi dalam dunia kerja melalui program magang.</p>
-      </div>
-    </div>
+      <h3>Risma Aprianti</h3>
+      <p>Saya adalah siswa kelas XI SMK INFORMATIKA.  Saya memiliki ketertarikan di bidang teknologi dan pemrograman. Saya mudah bersosialisasi dalam bekerja sama serta senang mempelajari hal-hal baru. Tujuan saya mengikuti PKL adalah untuk mengasah keterampilan dan memahami dunia kerja secara langsung.</p>
+    </center>
   </section>
 
   <section id="pendidikan" class="education">
-    <h2>Riwayat Pendidikan</h2>
-    <div class="card">
-      <ul>
-        <li><strong>2023 - Sekarang:</strong> SMK Negeri 1 Teknologi, Jurusan Artificial Intelligence</li>
-        <li><strong>2020 - 2023:</strong> SMP Negeri 5 Kreatif</li>
-      </ul>
-    </div>
+    <h2>Pendidikan</h2>
+    <ul>
+      <li><strong>SMK Informatika</strong> (2022 - Sekarang)<br>Jurusan Rekayasa Perangkat Lunak</li>
+      <li><strong>SMPN 17 Depok</strong> (2021 - 2024)</li>
+      <li><strong>SDN Krukut 01</strong> (2016-2021)</li>
+    </ul>
   </section>
 
-  <section id="pengalaman" class="experience">
+  <section id="pengalaman" class="pengalaman">
     <h2>Pengalaman</h2>
-    <div class="card">
-      <ul>
-        <li><strong>2024:</strong> Membuat aplikasi website toko online berbasis Laravel untuk tugas akhir sekolah.</li>
-        <li><strong>2023:</strong> Mengembangkan website portofolio pribadi menggunakan HTML, CSS, dan JavaScript.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="organisasi" class="organization">
-    <h2>Pengalaman Organisasi</h2>
-    <div class="card">
-      <ul>
-        <li><strong>OSIS (2023 - Sekarang):</strong> Anggota bidang kreatif, bertanggung jawab membuat desain promosi acara sekolah.</li>
-        <li><strong>Rohis (2022 - 2023):</strong> Panitia kegiatan keagamaan dan sosial di sekolah.</li>
-      </ul>
-    </div>
+    <ul>
+      <li><strong>Drumband</strong> (2017- 2018).</li>
+      <li><strong>Panitia 17 Agustus dan Karang Taruna</strong> (2024) — Bertugas sebagai dokumentasi.</li>
+    </ul>
   </section>
 
   <section id="portofolio" class="portfolio">
-    <h2>Portofolio Website</h2>
-    <div class="portfolio-grid">
-      <div class="project">
-        <img src="https://via.placeholder.com/400x200?text=Screenshot+TokoOnline" alt="Screenshot Toko Online">
-        <div class="project-content">
-          <h4>Website Toko Online "ShopSmart"</h4>
-          <p>Aplikasi e-commerce berbasis Laravel dengan fitur login admin, CRUD produk, dan laporan penjualan.</p>
-          <p><strong>Teknologi:</strong> Laravel, MySQL, Bootstrap</p>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="https://via.placeholder.com/400x200?text=Screenshot+EduPortal" alt="Screenshot EduPortal">
-        <div class="project-content">
-          <h4>Portal Edukasi "EduPortal"</h4>
-          <p>Website portal informasi siswa berisi data nilai, jadwal, dan forum diskusi sekolah.</p>
-          <p><strong>Teknologi:</strong> HTML, CSS, JavaScript</p>
-        </div>
-      </div>
+    <h2>Portofolio Proyek</h2>
+    <div class="portfolio-cards" id="portfolio-list">
+      <!-- Data Dummy akan diisi oleh JS -->
     </div>
   </section>
 
-  <section style="text-align:center; padding-top:20px;">
-    <button onclick="downloadCV()">Unduh CV Saya</button>
-  </section>
-
   <footer>
-    <p>© <span id="year"></span> Risma Aprianti — Portofolio Magang</p>
+    <p>© 2025 Marsya Ardeliansyah| Portofolio PKL</p>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // ==== DATA DUMMY PORTOFOLIO ====
+    const portfolioData = [
+      {
+        title: "Point of Sales (POS) System",
+        img: "https://via.placeholder.com/400x200.png?text=POS+System",
+        desc: "Aplikasi Point of Sales berbasis web dengan Laravel dan MySQL. Fitur meliputi manajemen produk, transaksi, dan laporan penjualan.",
+        tech: "Laravel, MySQL, Bootstrap"
+      },
+      {
+        title: "Website Profil Sekolah",
+        img: "https://via.placeholder.com/400x200.png?text=Website+Sekolah",
+        desc: "Website profil sekolah menampilkan informasi jurusan, guru, dan kegiatan sekolah. Dibuat menggunakan HTML, CSS, dan JavaScript.",
+        tech: "HTML, CSS, JavaScript"
+      }
+    ];
 
-    function downloadCV(){
-      alert('CV berhasil diunduh (fitur simulasi)');
-    }
+    const portfolioList = document.getElementById("portfolio-list");
+
+    portfolioData.forEach(item => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <img src="${item.img}" alt="${item.title}">
+        <div class="card-content">
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+          <p><strong>Teknologi:</strong> ${item.tech}</p>
+        </div>
+      `;
+      portfolioList.appendChild(card);
+    });
   </script>
+
 </body>
 </html>
