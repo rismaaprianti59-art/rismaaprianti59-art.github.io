@@ -62,7 +62,7 @@
       display: inline-block;
     }
 
-    .profile, .education, .pengalaman, .prestasi, .portfolio, .sertifikat, .kontak {
+    .profile, .education, .pengalaman, .portfolio, .sertifikat, .kontak {
       background: white;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -79,11 +79,11 @@
       border: 3px solid #7a77ff;
     }
 
-    .education ul, .pengalaman ul, .prestasi ul {
+    .education ul, .pengalaman ul {
       list-style: none;
     }
 
-    .education li, .pengalaman li, .prestasi li {
+    .education li, .pengalaman li {
       margin-bottom: 0.8rem;
     }
 
@@ -145,7 +145,6 @@
     <a href="#profil">Profil</a>
     <a href="#pendidikan">Pendidikan</a>
     <a href="#pengalaman">Pengalaman</a>
-    <a href="#prestasi">Prestasi</a>
     <a href="#portofolio">Portofolio</a>
     <a href="#sertifikat">Sertifikat</a>
     <a href="#kontak">Kontak</a>
@@ -155,7 +154,7 @@
     <center>
       <img src="Gemini_Generated_Image_6abx476abx476abx.png" alt="Foto Profil">
       <h3>Risma Aprianti</h3>
-      <p>Saya adalah siswa kelas XI SMK INFORMATIKA. Saya memiliki ketertarikan di bidang teknologi dan pemrograman. Saya mudah bersosialisasi dalam bekerja sama serta senang mempelajari hal-hal baru. Tujuan saya mengikuti PKL adalah untuk mengasah keterampilan dan memahami dunia kerja secara langsung.</p>
+      <p>Saya adalah siswa kelas XI SMK INFORMATIKA. Saya memiliki ketertarikan di bidang teknologi dan pemrograman. Saya mudah bersosialisasi dan senang mempelajari hal-hal baru. Tujuan saya mengikuti PKL adalah untuk mengasah keterampilan dan memahami dunia kerja secara langsung.</p>
     </center>
   </section>
 
@@ -170,95 +169,69 @@
   <section id="pengalaman" class="pengalaman">
     <h2>Pengalaman</h2>
     <ul>
-      <li><strong>Pengembang Website</strong> (2024 - Sekarang)<br>Membuat proyek website aplikasi penjualan barang dan berperan aktif sebagai anggota OSIS.</li>
-      <li><strong>Karang Taruna Wilayah Krukut</strong> (2023 - Sekarang)<br>Membantu pelaksanaan acara masyarakat seperti kerja bakti, lomba 17 Agustus, dan kegiatan remaja.</li>
+      <li><strong>Pengembang Website</strong> (2024 - Sekarang)<br>Membuat proyek website aplikasi penjualan barang dan aktif sebagai anggota OSIS.</li>
+      <li><strong>Karang Taruna Wilayah Krukut</strong> (2023 - Sekarang)<br>Membantu acara masyarakat seperti kerja bakti dan lomba 17 Agustus.</li>
     </ul>
   </section>
+
   <section id="portofolio" class="portfolio">
     <h2>Portofolio Proyek</h2>
-     <img src="portofolio 6 kalkulator .png">
-    <div class="portfolio-cards" id="portfolio-list"></div>
+    <div class="portfolio-cards">
+      <div class="card">
+        <img src="Screenshot (50).png" alt="Online Shop">
+        <div class="card-content">
+          <h3>Online Shop</h3>
+          <p>Aplikasi penjualan barang berbasis web.</p>
+          <p><strong>Teknologi:</strong> HTML, CSS</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="portofolio 6 kalkulator .png" alt="Kalkulator">
+        <div class="card-content">
+          <h3>Kalkulator</h3>
+          <p>Membuat kalkulator menggunakan NetBeans.</p>
+          <p><strong>Teknologi:</strong> JavaScript</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="categori.JPG" alt="POS System">
+        <div class="card-content">
+          <h3>Point of Sales (POS)</h3>
+          <p>Membuat aplikasi POS berbasis web dengan Laravel dan MySQL.</p>
+          <p><strong>Teknologi:</strong> HTML, CSS, Laravel, MySQL</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="sertifikat" class="sertifikat">
     <h2>Sertifikat</h2>
     <div class="sertifikat-cards">
       <div class="card">
-        <img src="CSSS.png" alt="Sertifikat 1">
+        <img src="CSSS.png" alt="Sertifikat CSS">
         <div class="card-content">
           <h3>CSS</h3>
-         
         </div>
       </div>
+
       <div class="card">
-        <img src="HTML.png">
+        <img src="HTML.png" alt="Sertifikat HTML">
         <div class="card-content">
           <h3>HTML</h3>
         </div>
       </div>
-       <div class="card">
-        <img src="INTERMEDIATE.png">
-        <div class="card-content">
-          <h3>JavaIntermediate</h3>
-        </div>
-       </div>
+
       <div class="card">
-        <img src="javascript.png">
+        <img src="INTERMEDIATE.png" alt="Sertifikat Java Intermediate">
+        <div class="card-content">
+          <h3>Java Intermediate</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="javascript.png" alt="Sertifikat JavaScript">
         <div class="card-content">
           <h3>JavaScript</h3>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontak" class="kontak">
-    <h2>Kontak</h2>
-    <p><strong>Email:</strong> rismaaprianti65@gmail.com</p>
-    <p><strong>Telepon:</strong> +62 896-7845-0517</p>
-    <p><strong>Alamat:</strong> JL. Raya Krukut Rt.001/rw06, Depok, Jawa Barat</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Risma Aprianti | Portofolio </p>
-  </footer>
-
-  <script>
-    const portfolioData = [
-      {
-        title: "Online Shop",
-        img: "Screenshot (50).png",
-        desc: "Aplikasi penjualan barang berbasis web.",
-        tech: "HTML, CSS"
-      },
-      {
-        title: "Kalkulator",
-        img: "portofolio 6 kalkulator .png",
-        desc: "Membuat kalkulator menggunakan NetBeans.",
-        tech: "JavaScript"
-      },
-        title: "Membuat POS (",
-        img: "categori.JPG",
-        desc: "Membuat POS  Point of Sales berbasis web dengan Laravel dan MySQL. ",
-        tech: "Html, Css, Laravel, Mysql" 
-      }
-    ];
-
-    const portfolioList = document.getElementById("portfolio-list");
-
-    portfolioData.forEach(item => {
-      const card = document.createElement("div");
-      card.classList.add("card");
-      card.innerHTML = `
-        <img src="${item.img}" alt="${item.title}">
-        <div class="card-content">
-          <h3>${item.title}</h3>
-          <p>${item.desc}</p>
-          <p><strong>Teknologi:</strong> ${item.tech}</p>
-        </div>
-      `;
-      portfolioList.appendChild(card);
-    });
-  </script>
-
-</body>
-</html>
