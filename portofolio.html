@@ -3,243 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Risma Aprianti</title>
+  <title>Portofolio Magang — Risma Aprianti</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+    body {background: #0f172a; color: #f1f5f9; line-height: 1.6;}
+    header {background: #1e293b; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;}
+    header h1 {color: #38bdf8; font-size: 24px;}
+    nav a {color: #cbd5e1; margin-left: 20px; text-decoration: none; font-weight: 500;}
+    nav a:hover {color: #38bdf8;}
 
-    body {
-      background-color: #f7f7f7;
-      color: #333;
-      line-height: 1.6;
-    }
+    section {padding: 60px 40px; max-width: 1000px; margin: auto;}
+    h2 {color: #38bdf8; margin-bottom: 15px; border-left: 4px solid #38bdf8; padding-left: 10px;}
+    .card {background: #1e293b; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); margin-bottom: 20px;}
 
-    header {
-      background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+    .profile {display: flex; align-items: center; gap: 20px;}
+    .profile img {width: 120px; height: 120px; border-radius: 50%; object-fit: cover;}
+    .profile div h3 {margin-bottom: 5px; font-size: 22px;}
+    .profile div p {color: #94a3b8;}
 
-    header nav {
-      max-width: 1000px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-    }
+    .education, .experience, .organization, .portfolio {margin-top: 40px;}
+    ul {list-style: none;}
+    li {margin-bottom: 10px;}
 
-    header nav a {
-      text-decoration: none;
-      color: #333;
-      margin-left: 15px;
-      transition: 0.3s;
-    }
+    .portfolio-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;}
+    .project {background: #1e293b; border-radius: 10px; overflow: hidden; transition: transform 0.3s ease;}
+    .project:hover {transform: translateY(-6px);}
+    .project img {width: 100%; height: 180px; object-fit: cover;}
+    .project-content {padding: 15px;}
+    .project-content h4 {color: #38bdf8; margin-bottom: 5px;}
+    .project-content p {color: #cbd5e1; font-size: 14px;}
 
-    header nav a:hover {
-      color: #6b46c1;
-    }
-
-    .hero {
-      max-width: 1000px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: #222;
-    }
-
-    .hero p {
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .hero img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #6b46c1;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #55309e;
-    }
-
-    .btn-outline {
-      border: 1px solid #ccc;
-      color: #333;
-    }
-
-    .btn-outline:hover {
-      background: #eee;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      border-left: 5px solid #6b46c1;
-      padding-left: 10px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .project {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-    }
-
-    .project img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .project .content {
-      padding: 15px;
-    }
-
-    .project h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .project p {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .skills span {
-      display: inline-block;
-      background: #eee;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 13px;
-    }
-
-    footer {
-      text-align: center;
-      color: #666;
-      padding: 30px;
-      background: #fff;
-      margin-top: 50px;
-      border-top: 1px solid #ddd;
-    }
+    footer {background: #1e293b; text-align: center; padding: 20px; color: #94a3b8; margin-top: 40px;}
+    button {background: #38bdf8; border: none; padding: 10px 16px; border-radius: 8px; font-weight: 600; color: #0f172a; cursor: pointer;}
+    button:hover {background: #0ea5e9;}
   </style>
 </head>
 <body>
-
   <header>
+    <h1>Risma Aprianti</h1>
     <nav>
-      <h2>Risma Aprianti</h2>
-      <div>
-        <a href="#about">Tentang</a>
-        <a href="#projects">Proyek</a>
-        <a href="#contact">Kontak</a>
-      </div>
+      <a href="#profil">Profil</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#organisasi">Organisasi</a>
+      <a href="#portofolio">Portofolio</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div>
-      <h1>Hai, saya Risma — Pelajar jurusan AI & Web Developer Pemula</h1>
-      <p>Saya membuat aplikasi web sederhana dan aktif di organisasi sekolah. Saat ini mencari kesempatan magang untuk mengasah kemampuan saya di bidang web development.</p>
-      <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-      <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
-    </div>
-    <div>
-      <img src="https://via.placeholder.com/400x400?text=Foto+Profil" alt="Foto Risma">
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>Tentang Saya</h2>
-    <p>Saya siswa SMK jurusan AI yang tertarik dalam dunia web development dan data. Aktif dalam kegiatan OSIS dan Rohis serta sering membuat proyek website sederhana untuk latihan.</p>
-
-    <h3 style="margin-top:20px">Keahlian</h3>
-    <div class="skills">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Laravel</span>
-      <span>MySQL</span>
-      <span>GitHub</span>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Proyek</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="https://via.placeholder.com/800x400?text=Proyek+1" alt="Proyek 1">
-        <div class="content">
-          <h3>Aplikasi Penjualan Barang</h3>
-          <p>Website CRUD untuk penjualan barang menggunakan Laravel dan MySQL. Dilengkapi fitur keranjang dan laporan penjualan.</p>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="https://via.placeholder.com/800x400?text=Proyek+2" alt="Proyek 2">
-        <div class="content">
-          <h3>Website Sekolah</h3>
-          <p>Website profil sekolah dengan sistem pendaftaran ekstrakurikuler. Dibuat menggunakan HTML, CSS, dan JS murni.</p>
-        </div>
+  <section id="profil">
+    <h2>Profil Saya</h2>
+    <div class="card profile">
+      <img src="https://via.placeholder.com/120" alt="Foto Profil">
+      <div>
+        <h3>Risma Aprianti</h3>
+        <p>Pelajar SMK Jurusan Artificial Intelligence yang antusias dalam pengembangan web dan desain UI/UX. Saya memiliki semangat tinggi untuk belajar hal baru dan siap berkontribusi dalam dunia kerja melalui program magang.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>Hubungi saya untuk kerja sama atau informasi magang melalui email di <b>risma@example.com</b>.</p>
+  <section id="pendidikan" class="education">
+    <h2>Riwayat Pendidikan</h2>
+    <div class="card">
+      <ul>
+        <li><strong>2023 - Sekarang:</strong> SMK Negeri 1 Teknologi, Jurusan Artificial Intelligence</li>
+        <li><strong>2020 - 2023:</strong> SMP Negeri 5 Kreatif</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pengalaman" class="experience">
+    <h2>Pengalaman</h2>
+    <div class="card">
+      <ul>
+        <li><strong>2024:</strong> Membuat aplikasi website toko online berbasis Laravel untuk tugas akhir sekolah.</li>
+        <li><strong>2023:</strong> Mengembangkan website portofolio pribadi menggunakan HTML, CSS, dan JavaScript.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="organisasi" class="organization">
+    <h2>Pengalaman Organisasi</h2>
+    <div class="card">
+      <ul>
+        <li><strong>OSIS (2023 - Sekarang):</strong> Anggota bidang kreatif, bertanggung jawab membuat desain promosi acara sekolah.</li>
+        <li><strong>Rohis (2022 - 2023):</strong> Panitia kegiatan keagamaan dan sosial di sekolah.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="portofolio" class="portfolio">
+    <h2>Portofolio Website</h2>
+    <div class="portfolio-grid">
+      <div class="project">
+        <img src="https://via.placeholder.com/400x200?text=Screenshot+TokoOnline" alt="Screenshot Toko Online">
+        <div class="project-content">
+          <h4>Website Toko Online "ShopSmart"</h4>
+          <p>Aplikasi e-commerce berbasis Laravel dengan fitur login admin, CRUD produk, dan laporan penjualan.</p>
+          <p><strong>Teknologi:</strong> Laravel, MySQL, Bootstrap</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="https://via.placeholder.com/400x200?text=Screenshot+EduPortal" alt="Screenshot EduPortal">
+        <div class="project-content">
+          <h4>Portal Edukasi "EduPortal"</h4>
+          <p>Website portal informasi siswa berisi data nilai, jadwal, dan forum diskusi sekolah.</p>
+          <p><strong>Teknologi:</strong> HTML, CSS, JavaScript</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align:center; padding-top:20px;">
+    <button onclick="downloadCV()">Unduh CV Saya</button>
   </section>
 
   <footer>
-    <p>© 2025 Risma Aprianti — Dibuat dengan ❤️</p>
+    <p>© <span id="year"></span> Risma Aprianti — Portofolio Magang</p>
   </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function downloadCV(){
+      alert('CV berhasil diunduh (fitur simulasi)');
+    }
+  </script>
 </body>
 </html>
