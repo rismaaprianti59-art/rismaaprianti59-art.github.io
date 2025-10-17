@@ -1,164 +1,205 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portofolio — Risma Aprianti</title>
-  <meta name="description" content="Portofolio pribadi - proyek, keterampilan, kontak." />
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071029 0%, var(--bg) 100%);color:#e6eef6;line-height:1.5}
-    .container{max-width:1000px;margin:36px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021025}
-    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
-    nav a:hover{color:var(--accent)}
-    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:28px;align-items:center}
-    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-    h1{margin:0 0 8px 0;font-size:28px}
-    p.lead{margin:0;color:var(--muted)}
-    .profile{display:flex;gap:16px;align-items:center}
-    .avatar{width:96px;height:96px;border-radius:12px;flex-shrink:0;background:linear-gradient(180deg,#e6eef610, transparent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021025}
-    .stats{display:flex;gap:12px;margin-top:12px}
-    .stat{background:var(--glass);padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:700}
+import React from "react";
 
-    /* Projects grid */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
-    .proj{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
-    .proj h3{margin:0 0 6px 0}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);color:var(--muted)}
+// Single-file React component for a developer/student portfolio
+// Built with Tailwind CSS utility classes (assumes Tailwind is configured in the project)
+// Replace dummy data, images, and links with your real info.
 
-    /* Skills */
-    .skills{margin-top:10px}
-    .skill{margin-bottom:10px}
-    .bar{height:10px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
-    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);width:60%}
+export default function Portfolio() {
+  const projects = [
+    {
+      id: 1,
+      title: "Aplikasi Penjualan Barang",
+      description:
+        "Website aplikasi penjualan barang (CRUD, keranjang, dashboard admin) dibuat dengan Laravel + Vue.js. Termasuk fitur laporan penjualan dan otentikasi.",
+      tech: ["Laravel", "Vue.js", "MySQL"],
+      screenshot: "https://via.placeholder.com/800x500?text=Project+1+Screenshot",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "Website Sekolah (Portofolio)",
+      description:
+        "Website profil sekolah + sistem pendaftaran ekstrakurikuler sederhana. Project ini menajdi tugas akhir jurusan dan dipakai sebagai demo magang.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      screenshot: "https://via.placeholder.com/800x500?text=Project+2+Screenshot",
+      link: "#",
+    },
+  ];
 
-    /* Contact */
-    form{display:flex;flex-direction:column;gap:10px}
-    input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:8px;color:inherit}
-    button{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#021025;font-weight:700;cursor:pointer}
+  const skills = [
+    "HTML & CSS",
+    "JavaScript (vanilla)",
+    "React",
+    "Laravel",
+    "SQL",
+    "Git & GitHub",
+  ];
 
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
-
-    @media (max-width:900px){.hero{grid-template-columns:1fr} .projects{grid-template-columns:1fr} .avatar{width:80px;height:80px}}
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">R</div>
-        <div>
-          <div style="font-weight:800">Risma Aprianti</div>
-          <div style="font-size:12px;color:var(--muted)">Web Developer • Desainer UI • Pelajar</div>
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800">
+      <header className="bg-white shadow-sm sticky top-0 z-20">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+          <h1 className="text-xl font-semibold">Risma Aprianti</h1>
+          <nav className="space-x-4 text-sm">
+            <a href="#about" className="hover:underline">
+              About
+            </a>
+            <a href="#projects" className="hover:underline">
+              Projects
+            </a>
+            <a href="#contact" className="hover:underline">
+              Contact
+            </a>
+            <a
+              href="#"
+              className="ml-2 inline-block rounded-md border border-gray-200 px-3 py-1 text-sm hover:bg-gray-100"
+            >
+              Download CV
+            </a>
+          </nav>
         </div>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+      </header>
 
-    <section class="hero">
-      <div class="card">
-        <div class="profile">
-          <div class="avatar">RA</div>
-          <div>
-            <h1>Halo, saya Risma Aprianti</h1>
-            <p class="lead">Saya membuat aplikasi web, antarmuka pengguna, dan desain sederhana yang fokus pada pengalaman pengguna. Saya tertarik pada AI, frontend, dan automasi.</p>
-            <div class="stats" aria-hidden>
-              <div class="stat">3+ Proyek</div>
-              <div class="stat">2 Tahun Pengalaman</div>
-              <div class="stat">SMK INFORMATIKA UTAMA</div>
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        {/* Hero */}
+        <section className="grid md:grid-cols-3 gap-8 items-center">
+          <div className="md:col-span-2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              Hai, saya Risma — Pelajar jurusan AI & developer pemula
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Saya membuat aplikasi web sederhana dan aktif di organisasi sekolah. Saat ini mencari kesempatan magang untuk mengasah kemampuan web
+              development dan data.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="#projects"
+                className="rounded-md px-4 py-2 bg-indigo-600 text-white text-sm hover:bg-indigo-700"
+              >
+                Lihat Proyek
+              </a>
+              <a
+                href="#contact"
+                className="rounded-md px-4 py-2 border border-gray-300 text-sm hover:bg-gray-100"
+              >
+                Hubungi Saya
+              </a>
+            </div>
+
+            <div className="mt-6 bg-white p-4 rounded-lg shadow-sm">
+              <h3 className="text-sm font-medium text-gray-700">Ringkasan</h3>
+              <ul className="mt-2 text-sm text-gray-600 list-disc ml-5">
+                <li>Jurusan: AI (SMK) — kelas XII</li>
+                <li>Pengalaman: membuat website penjualan, ikut OSIS, rohis</li>
+                <li>Tools: VSCode, Git, Laravel, Tailwind</li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div id="about" style="margin-top:14px">
-          <h3>Tentang Saya</h3>
-          <p class="lead">Saya pelajar yang suka membuat proyek nyata: website, aplikasi sederhana, dan ikut organisasi. Saya ingin terus belajar supaya bisa membuat produk yang berguna.</p>
-        </div>
+          <div className="flex justify-center md:justify-end">
+            <div className="w-56 h-56 rounded-xl overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center">
+              <img
+                src="https://via.placeholder.com/400x400?text=Your+Photo"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
 
-        <div id="projects" class="projects">
-          <article class="proj">
-            <h3>Website Toko Online</h3>
-            <p class="lead">Aplikasi penjualan barang sederhana dengan keranjang, admin panel, dan laporan.</p>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-          </article>
+        {/* About & Education */}
+        <section id="about" className="mt-12 grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-2xl font-semibold mb-3">Tentang Saya</h3>
+            <p className="text-gray-600">
+              Saya seorang siswa SMK jurusan AI yang tertarik pada web development dan pembuatan aplikasi. Saya senang belajar sesuatu yang baru,
+              mencari solusi sederhana untuk masalah, dan aktif dalam kegiatan sekolah.
+            </p>
 
-          <article class="proj">
-            <h3>Portal Sekolah</h3>
-            <p class="lead">Sistem informasi siswa: data, absensi, dan ekstrakurikuler.</p>
-            <div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span></div>
-          </article>
+            <h4 className="mt-6 font-medium">Organisasi & Pengalaman</h4>
+            <ul className="mt-2 text-gray-600 list-disc ml-5">
+              <li>Anggota OSIS — Menjadi panitia kegiatan sekolah</li>
+              <li>Rohis — Aktif dalam kegiatan keagamaan dan sosial</li>
+              <li>Proyek: Aplikasi penjualan barang (tugas praktek)</li>
+            </ul>
+          </div>
 
-          <article class="proj">
-            <h3>Aplikasi Catatan</h3>
-            <p class="lead">Aplikasi catatan harian yang responsif dan bisa digunakan offline.</p>
-            <div class="tags"><span class="tag">PWA</span><span class="tag">Service Worker</span></div>
-          </article>
+          <div>
+            <h3 className="text-2xl font-semibold mb-3">Pendidikan</h3>
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+              <p className="font-medium">SMK — Jurusan AI</p>
+              <p className="text-sm text-gray-600">Tahun: 2023 - Sekarang</p>
+              <p className="mt-2 text-gray-600 text-sm">Keterangan singkat: fokus pada pemrograman dasar, database, dan AI dasar.</p>
+            </div>
 
-          <article class="proj">
-            <h3>Desain UI - Aplikasi Kantin</h3>
-            <p class="lead">Prototype UI untuk memudahkan pemesanan makanan di sekolah.</p>
-            <div class="tags"><span class="tag">Figma</span><span class="tag">Prototype</span></div>
-          </article>
-        </div>
-      </div>
+            <h4 className="mt-6 font-medium">Keahlian</h4>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {skills.map((s) => (
+                <span key={s} className="px-3 py-1 bg-gray-100 rounded-full text-sm">
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      <aside class="card">
-        <h3>Kontak Singkat</h3>
-        <p class="lead">Ingin bekerja sama? Kirim pesan singkat — saya biasanya cepat membalas.</p>
-        <div style="margin-top:10px;font-weight:700">Email</div>
-        <div style="color:var(--muted);margin-bottom:12px">rismaaprianti@gmail.com</div>
+        {/* Projects */}
+        <section id="projects" className="mt-12">
+          <h3 className="text-2xl font-semibold mb-6">Proyek</h3>
 
-        <h3 id="skills">Keterampilan</h3>
-        <div class="skills">
-          <div class="skill"><div style="font-weight:700">HTML &amp; CSS</div><div class="bar" aria-hidden><i style="width:90%"></i></div></div>
-          <div class="skill"><div style="font-weight:700">JavaScript</div><div class="bar" aria-hidden><i style="width:70%"></i></div></div>
-          <div class="skill"><div style="font-weight:700">Laravel / PHP</div><div class="bar" aria-hidden><i style="width:60%"></i></div></div>
-          <div class="skill"><div style="font-weight:700">UI / Prototyping</div><div class="bar" aria-hidden><i style="width:75%"></i></div></div>
-        </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {projects.map((p) => (
+              <article key={p.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <img src={p.screenshot} alt={p.title} className="w-full h-48 object-cover" />
+                <div className="p-4">
+                  <h4 className="font-semibold text-lg">{p.title}</h4>
+                  <p className="text-sm text-gray-600 mt-2">{p.description}</p>
 
-        <h3 style="margin-top:14px">Unduh CV</h3>
-        <a href="#" style="display:inline-block;margin-top:8px;text-decoration:none"><button>Download CV (PDF)</button></a>
-      </aside>
-    </section>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {p.tech.map((t) => (
+                      <span key={t} className="text-xs px-2 py-1 bg-gray-100 rounded">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
 
-    <section class="card" style="margin-top:18px" id="contact">
-      <h2>Hubungi Saya</h2>
-      <form onsubmit="handleSubmit(event)">
-        <input type="text" id="name" placeholder="Nama" required />
-        <input type="email" id="email" placeholder="Email" required />
-        <textarea id="message" rows="4" placeholder="Pesan" required></textarea>
-        <button type="submit">Kirim Pesan</button>
-      </form>
-      <p id="note" style="color:var(--muted);margin-top:8px;font-size:13px">Atau kirim langsung ke <strong>nama@example.com</strong></p>
-    </section>
+                  <div className="mt-4 flex items-center justify-between">
+                    <a href={p.link} className="text-sm hover:underline">
+                      Lihat detail
+                    </a>
+                    <a
+                      href={p.link}
+                      className="text-sm rounded-md px-3 py-1 border border-gray-200 hover:bg-gray-50"
+                    >
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-    <footer>
-      © <span id="year"></span> [Nama Kamu] — Dibuat dengan ❤️ • Template sederhana
-    </footer>
-  </div>
+        {/* Contact */}
+        <section id="contact" className="mt-12 bg-white p-6 rounded-lg shadow-sm">
+          <h3 className="text-2xl font-semibold mb-3">Hubungi Saya</h3>
+          <p className="text-gray-600 mb-4">Tertarik bekerja sama atau butuh CV? Kirim email atau isi form singkat ini.</p>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function handleSubmit(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const msg = document.getElementById('message').value;
-      // membuka mail client sebagai cara sederhana mengirim pesan
-      const subject = encodeURIComponent('Pesan dari ' + name);
-      const body = encodeURIComponent('Nama: ' + name + '\nEmail: ' + email + '\n\n' + msg);
-      window.location.href = `mailto:nama@example.com?subject=${subject}&body=${body}`;
-    }
-  </script>
-</body>
-</html>
+          <form action={`mailto:youremail@example.com`} method="GET" className="grid md:grid-cols-2 gap-4">
+            <input required name="name" placeholder="Nama" className="p-3 border rounded" />
+            <input required name="email" placeholder="Email" className="p-3 border rounded" />
+            <textarea required name="message" placeholder="Pesan" className="p-3 border rounded md:col-span-2" rows={4} />
+            <div className="md:col-span-2 flex gap-3">
+              <button type="submit" className="px-4 py-2 rounded bg-indigo-600 text-white">Kirim</button>
+              <a href="#" className="px-4 py-2 rounded border">Atau email langsung</a>
+            </div>
+          </form>
+        </section>
+
+        <footer className="mt-12 text-center text-sm text-gray-500 pb-12">
+          © {new Date().getFullYear()} Risma Aprianti — dibuat dengan ❤️
+        </footer>
+      </main>
+    </div>
+  );
+}
